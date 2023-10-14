@@ -1,68 +1,37 @@
-// FirebaseLoginModalComponent.js
+import React, { useState } from "react";
+import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
+import firebase from "../config/firebase";
+import "firebase/auth";
 
-import React, { useState } from 'react';
-import firebase from '../config/firebase';
-import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
-
-function FirebaseLoginModalComponent() {
-    const [modalOpen, setModalOpen] = useState(false);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
-
-    const toggleModal = () => {
-        setModalOpen(!modalOpen);
-    };
-
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        setErrorMessage('');  // Reset error message
-
-        try {
-            await firebase.auth().signInWithEmailAndPassword(email, password);
-            console.log('Logged in successfully');
-            // You can handle further actions like redirecting the user here
-            toggleModal();
-        } catch (error) {
-            setErrorMessage(error.message);
-        }
-    };
-
-    return (
-        <div>
-            <Button color="primary" onClick={toggleModal}>Login</Button>
-
-            <Modal isOpen={modalOpen} toggle={toggleModal}>
-                <ModalHeader toggle={toggleModal}>Login</ModalHeader>
-                <ModalBody>
-                    <Form onSubmit={handleLogin}>
-                        <FormGroup>
-                            <Label for="email">Email</Label>
-                            <Input 
-                                type="email" 
-                                id="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required 
-                            />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="password">Password</Label>
-                            <Input 
-                                type="password" 
-                                id="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required 
-                            />
-                        </FormGroup>
-                        {errorMessage && <Alert color="danger">{errorMessage}</Alert>}
-                        <Button color="primary" type="submit">Submit</Button>
-                    </Form>
-                </ModalBody>
-            </Modal>
-        </div>
-    );
+import FirebaseLoginComponent from "./FirebaseLoginComponent";
+const firebaseConfig = {
+  // your firebase config here
+};
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
 }
 
-export default FirebaseLoginModalComponent;
+const LoginModal = (props) => {
+  const { buttonLabel, className } = props;
+
+  const [modal, setModal] = useState(true); // State to control modal visibility
+
+
+  const toggle = () => setModal(!modal);
+
+  
+  return (
+    <div>
+      <Button color="danger" onClick={toggle}>{buttonLabel} </Button>
+      <Modal isOpen={modal} toggle={toggle} className={className}>
+        <ModalHeader toggle={toggle}>Login</ModalHeader>
+        <ModalBody>
+            <FirebaseLoginComponent></FirebaseLoginComponent>
+        </ModalBody>
+          
+      </Modal>
+    </div>
+  );
+};
+
+export default LoginModal;

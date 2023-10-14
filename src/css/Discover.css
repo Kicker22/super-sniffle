@@ -1,0 +1,18 @@
+.discover-container {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .post-card {
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 1px solid #e1e4e8;
+  }
+  
+  .post-card h5 {
+    margin-bottom: 10px;
+  }
+  
+  .post-card p {
+    color: #657786;
+  }

@@ -1,25 +1,17 @@
 import React from 'react';
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
 
-function PostComponent({ post }) {
+const PostComponent = (props) => {
   return (
-    <Card>
+    <Card className="mb-3">
       <CardBody>
-        <div className="d-flex">
-          <CardImg 
-            style={{ width: '50px', borderRadius: '50%', marginRight:"1rem" }} 
-            src="https://via.placeholder.com/150" 
-            alt="Author profile"
-          />
-          <div className="ml-3">
-            <CardTitle tag="h5">{post.authorName}</CardTitle>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">{post.timestamp}</CardSubtitle>
-          </div>
-        </div>
-        <CardText className="mt-3">{post.content}</CardText>
+        {/* <CardTitle tag="h5">{props.postData.title}</CardTitle> */}
+        <CardTitle tag="h5">{props.title}</CardTitle>
+        {/* <CardText>{props.postData.content}</CardText> */}
+        <CardText>{props.content}</CardText>
       </CardBody>
     </Card>
   );
-}
+};
 
 export default PostComponent;
