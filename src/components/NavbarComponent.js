@@ -23,7 +23,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <Navbar color="light" light expand="md">
+    <Navbar color="dark" dark expand="md">
       <NavbarBrand href="/">MyApp</NavbarBrand>
       <Nav className="ml-auto" navbar>
         <NavItem>

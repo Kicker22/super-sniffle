@@ -11,6 +11,7 @@ import NonAuthDiscoverPage from './components/NonAuthDiscoverPage';
 import StemplotHomepage from "./components/StemplotHomepage"
 import FirebaseLoginComponent from './components/FirebaseLoginComponent';
 import UserInfo from "./components/UserInfo"
+import Dashboard from './components/Dashboard';
 
 
 
@@ -21,13 +22,13 @@ function App() {
       <Router>
           <NavbarComponent />
         <Routes>
-
           <Route path="/home" exact element={<StemplotHomepage></StemplotHomepage>} />
           <Route path="/discover" element={<NonAuthDiscoverPage></NonAuthDiscoverPage>} />
           <Route path="/signup" element={<SignUp></SignUp>} />
           <Route path="/login" element={<FirebaseLoginComponent/>} />
           <Route path="/info" element={<UserInfo></UserInfo>} />
         </Routes>
+        <Dashboard></Dashboard>
       </Router>
   );
 }

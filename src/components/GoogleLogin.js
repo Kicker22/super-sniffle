@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Button } from 'reactstrap';
-import firebase from './firebaseConfig';
+import firebase from '../config/firebase';
 
 function Login() {
     const handleGoogleLogin = async () => {
