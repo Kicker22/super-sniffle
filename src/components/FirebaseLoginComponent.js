@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 import firebase from '../config/firebase';
 import { useNavigate } from 'react-router-dom';
+import LoginWithGoogle from './LoginWithGoogle';
 
 const LoginModal = () => {
   const [email, setEmail] = useState('');
@@ -58,6 +59,7 @@ const LoginModal = () => {
             />
           </FormGroup>
           <Button color="primary" type="submit">Login</Button>
+        <LoginWithGoogle></LoginWithGoogle>
         </Form>
       </ModalBody>
     </Modal>

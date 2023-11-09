@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, CardBody, CardTitle, CardText, Input, Button, ListGroup, ListGroupItem } from 'reactstrap';
-import UserTray from './UserTray';
+// import UserTray from './UserTray';
 
 const UserProfilePage = () => {
   const [postContent, setPostContent] = useState('');
-
-  // Mock data for online friends
-  const onlineFriends = [
-    { id: 1, name: 'Alice' },
-    { id: 2, name: 'Bob' },
-    { id: 3, name: 'Charlie' },
-  ];
 
   // Handlers
   const handlePostChange = (e) => {
@@ -26,26 +19,7 @@ const UserProfilePage = () => {
   return (
     <Container>
       <Row>
-        {/* User Tray */}
-        <Col sm="3">
-          <Card>
-            <CardBody>
-                <UserTray></UserTray>
-            </CardBody>
-          </Card>
-          
-          {/* Friends Online */}
-          <Card>
-            <CardBody>
-              <CardTitle tag="h5">Friends Online</CardTitle>
-              <ListGroup>
-                {onlineFriends.map(friend => (
-                  <ListGroupItem key={friend.id}>{friend.name}</ListGroupItem>
-                ))}
-              </ListGroup>
-            </CardBody>
-          </Card>
-        </Col>
+
 
         {/* Main Content */}
         <Col sm="9">

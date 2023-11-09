@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Button } from 'reactstrap';
 import firebase from '../config/firebase'; // ensure firebase is configured
+import SignupModal from './SignupModal'
 
 const NavigationBar = () => {
   const [user, setUser] = useState(null);
@@ -27,16 +28,16 @@ const NavigationBar = () => {
       <NavbarBrand href="/">MyApp</NavbarBrand>
       <Nav className="ml-auto" navbar>
         <NavItem>
-          <NavLink href="/discover">Discover</NavLink>
+          {/* <NavLink href="/discover">Discover</NavLink> */}
         </NavItem>
 
         {user ? (
           <>
             <NavItem>
-              <NavLink href="/profile">Profile</NavLink>
+              {/* <NavLink href="/profile">Profile</NavLink> */}
             </NavItem>
             <NavItem>
-              <NavLink href="/settings">Settings</NavLink>
+              <NavLink href="/Account">Account</NavLink>
             </NavItem>
             <NavItem>
               <Button onClick={handleLogout}>Logout</Button>
@@ -48,7 +49,7 @@ const NavigationBar = () => {
               <NavLink href="/login">Login</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/signup">Sign Up</NavLink>
+              <SignupModal></SignupModal>
             </NavItem>
           </>
         )}

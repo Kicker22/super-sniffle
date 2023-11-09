@@ -39,11 +39,12 @@ const UserTray = () => {
       <CardBody>
         <CardImg
           top
-          src={users.profilePicture || 'https://robohash.org/mail@ashallendesign.co.uk'} // Place a default image URL here
-          alt={`${users.fullName}'s profile picture`}
+          referrerpolicy="no-referrer"
+          src={users.photoURL || 'https://robohash.org/mail@ashallendesign.co.uk'} // Place a default image URL here
+          alt={`${users.firstname}'s profile picture`}
           style={{ width: '100px', height: '100px', borderRadius: '50%' }}
         />
-        <CardTitle tag="h5">{users.fullName}</CardTitle>
+        <CardTitle tag="h5">{users.firstname} {users.lastname}</CardTitle>
         <CardText>@{users.username}</CardText>
         {/* Social Icons Links */}
         <div>

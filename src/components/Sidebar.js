@@ -1,6 +1,5 @@
 import React from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
-import GoogleLogin from './GoogleLogin'
 
 const Sidebar = () => {
   return (
@@ -16,7 +15,28 @@ const Sidebar = () => {
           <NavLink href="#">Messages</NavLink>
         </NavItem>
         <NavItem>
-          <GoogleLogin></GoogleLogin>
+          <NavLink href="#">Videos</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="#">Photos</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="#">Groups</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="#">Forums</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="#">Websites</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="#">Blogs</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/personalinfo">Personal Info</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="#">Settings</NavLink>
         </NavItem>
         {/* More nav links */}
       </Nav>
